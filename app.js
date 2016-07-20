@@ -7,6 +7,27 @@ function Project(opts){
   this.about = opts.about;
 }
 
-Projects.prototype.toHTML = function(){
+Project.prototype.toHTML = function(){
+  var $newProject = $('article.template').clone();
 
+  $newProject.find('a').text(this.title);
+  $newProject.find('a').prop('href', this.url);
+  $newProject.attr('pubdate', this.published);
+  $newProject.find('section.aboutProj').append(this.about);
+
+  $newProject.removeClass('template');
+
+  return $newProject;
 };
+
+data.sort(function(a,b) {
+  return (new Date(b.published)) - (new Date(a.published));
+});
+
+data.forEach(function(opts) {
+  projects.push(new Project(opts));
+});
+
+projects.forEach(function(a){
+  $('#project-section').append(a.toHTML());
+});
