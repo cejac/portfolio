@@ -1,1 +1,11 @@
+body {
 
+    background: -webkit-linear-gradient(#82B5A6,#E3E2C4, #E9E9D1);
+    background: -o-linear-gradient(#82B5A6,#E3E2C4, #E9E9D1);
+    background: -moz-linear-gradient(#82B5A6,#E3E2C4, #E9E9D1);
+    background: linear-gradient(#82B5A6,#E3E2C4, #E9E9D1);
+}
+
+#project-section {
+  display: inline;
+}
