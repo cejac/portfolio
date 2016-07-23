@@ -1,11 +1,30 @@
 body {
-
-    background: -webkit-linear-gradient(#82B5A6,#E3E2C4, #E9E9D1);
-    background: -o-linear-gradient(#82B5A6,#E3E2C4, #E9E9D1);
-    background: -moz-linear-gradient(#82B5A6,#E3E2C4, #E9E9D1);
-    background: linear-gradient(#82B5A6,#E3E2C4, #E9E9D1);
+  background: -webkit-linear-gradient(#82B5A6,#E3E2C4);
+  background: -o-linear-gradient(#82B5A6,#E3E2C4);
+  background: -moz-linear-gradient(#82B5A6,#E3E2C4);
+  background: linear-gradient(#82B5A6,#E3E2C4);
+  min-width: 960px;
+  margin: 0 auto;
 }
 
-#project-section {
+h1 {
+  text-align: center;
+  }
+
+  nav {
+    text-align: center;
+  }
+
+li{
   display: inline;
+  list-style-type: none;
+  margin: 0 50px;
+}
+#project-section {
+  text-align: center;
+}
+
+.aboutProj {
+  margin: 0 300px;
+  margin-bottom: 70px;
 }
