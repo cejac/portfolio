@@ -1,14 +1,17 @@
 body {
-  background: -webkit-linear-gradient(#82B5A6,#E3E2C4);
-  background: -o-linear-gradient(#82B5A6,#E3E2C4);
-  background: -moz-linear-gradient(#82B5A6,#E3E2C4);
-  background: linear-gradient(#82B5A6,#E3E2C4);
+  background: -webkit-linear-gradient(#F54E34,#FBDDD4, #006994);
+  background: -o-linear-gradient(#F54E34,#FBDDD4, #006994);
+  background: -moz-linear-gradient(#F54E34,#FBDDD4, #006994);
+  background: linear-gradient(#F54E34,#FBDDD4, #006994);
   min-width: 960px;
   margin: 0 auto;
 }
 
 h1 {
   text-align: center;
+  color: white;
+  font-family: Caledonia;
+  font-size: 100px;
   }
 
   nav {
@@ -20,7 +23,21 @@ li{
   list-style-type: none;
   margin: 0 50px;
 }
+
+li a {
+  text-decoration: none;
+  color: #FBDDD4;
+}
+
+li a:hover{
+  color: #006994;
+}
+
 #project-section {
+  text-align: center;
+}
+
+#about{
   text-align: center;
 }
 
