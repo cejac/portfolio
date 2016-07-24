@@ -24,9 +24,26 @@ li{
 
 li a {
   text-decoration: none;
-  color: #FBDDD4;
+  color: #CF5300;
 }
 
 li a:hover{
   color: #006994;
+}
+
+h2 a{
+  color: #CF5300;
+}
+
+p{
+  color: black;
+}
+
+#about {
+  color: #CF5300;
+}
+
+#about h2 {
+  font-size: 250%;
+  font-family: 'Optima';
 }
