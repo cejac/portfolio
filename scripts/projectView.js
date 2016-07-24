@@ -13,10 +13,10 @@ projectView.menuToggle = function(){
     $('.navSelect').toggle();
   });
   $(window).on('resize', function() {
-    if ($(window).width() >= 414) {
+    if ($(window).width() >= 600) {
       $('.navSelect').show().css({'display': 'inline'});
-    } else if ($(window).width() <= 414) {
-      $('.navSelect').hide().css({'display': 'flex', 'flex-direction': 'row'});
+    } else if ($(window).width() <= 599) {
+      $('.navSelect').hide().css({'display': 'flex', 'flex-direction': 'row', 'justify-content': 'center'});
     } else {
       $('.navSelect').hide();
     }

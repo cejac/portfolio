@@ -1,26 +1,25 @@
 body {
-  background: -webkit-linear-gradient(#F54E34,#FBDDD4, #006994);
-  background: -o-linear-gradient(#F54E34,#FBDDD4, #006994);
-  background: -moz-linear-gradient(#F54E34,#FBDDD4, #006994);
-  background: linear-gradient(#F54E34,#FBDDD4, #006994);
+  background: -webkit-linear-gradient(#107686,#77D2D5, #BCDDCC, #F9E1C5, #EDAF8F);
+  background: -o-linear-gradient(#107686,#77D2D5, #BCDDCC, #F9E1C5, #EDAF8F);
+  background: -moz-linear-gradient(#107686,#77D2D5,#BCDDCC, #F9E1C5, #EDAF8F);
+  background: linear-gradient(#107686,#77D2D5, #BCDDCC, #F9E1C5, #EDAF8F);
   line-height: inherit;
 }
 
-h1 {
+#mainHeader{
+  font-size: 200%;
   text-align: center;
   color: white;
-  font-family: Caledonia;
-  font-size: 100px;
+  font-family: 'Optima';
   }
 
   nav {
     text-align: center;
-  }
+}
 
 li{
-  display: inline;
   list-style-type: none;
-  margin: 0 50px;
+  margin: 5%;
 }
 
 li a {
@@ -30,19 +29,4 @@ li a {
 
 li a:hover{
   color: #006994;
-}
-
-#project-section {
-  text-align: center;
-}
-
-#about{
-  text-align: center;
-}
-
-.aboutProj {
-  text-align: center;
-  margin-left: 25%;
-  margin-right: 25%;
-  margin-bottom: 3em;
 }

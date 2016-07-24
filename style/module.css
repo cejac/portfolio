@@ -7,14 +7,51 @@
   font-size: 125%;
 }
 
+.aboutProj {
+  text-align: center;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-bottom: 3em;
+}
+
+.tab-content {
+  background: rgba(255,255,255,0.5);
+}
+
+#toggleNav{
+  max-width: 100%;
+}
+
+#project-section {
+  text-align: center;
+}
+
+#about{
+  text-align: center;
+}
+
 @media only screen and (min-width: 600px){
   .icon-menu{
     display: none;
   }
+
+  .navSelect{
+    display: inline;
+  }
+
+  .tab-content{
+    max-width: 50%;
+    margin-left: 25%;
+}
 }
 
 @media only screen and (max-width: 599px){
   .navSelect{
     display: none;
-  }
+}
+
+    .tab-content{
+      max-width: 90%;
+      margin-left: 5%;
+    }
 }
