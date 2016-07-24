@@ -3,8 +3,7 @@ body {
   background: -o-linear-gradient(#F54E34,#FBDDD4, #006994);
   background: -moz-linear-gradient(#F54E34,#FBDDD4, #006994);
   background: linear-gradient(#F54E34,#FBDDD4, #006994);
-  min-width: 960px;
-  margin: 0 auto;
+  line-height: inherit;
 }
 
 h1 {
@@ -42,6 +41,8 @@ li a:hover{
 }
 
 .aboutProj {
-  margin: 0 300px;
-  margin-bottom: 70px;
+  text-align: center;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-bottom: 3em;
 }
