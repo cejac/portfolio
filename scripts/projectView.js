@@ -2,11 +2,10 @@ var projectView = {};
 
 projectView.filter = function(){
   $('article').each(function(){
-    if(!$(this).hasClass('template')){
-      var val = $(this).find('h2 a').text();
-      var optionTag = '<option value="' + val + '">' + val + '</option>';
-      $('#project-filter').append(optionTag);
-    }
+    var val = $(this).find('h2 a').text();
+    console.log('hi');
+    var optionTag = '<option value="' + val + '">' + val + '</option>';
+    $('#project-filter').append(optionTag);
   });
 };
 

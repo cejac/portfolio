@@ -8,6 +8,16 @@
     <link rel="stylesheet" type="text/css" href="normalize.css">
     <link rel="stylesheet" type="text/css" href="icon.css">
     <link rel="stylesheet" type="text/css" href="style/module.css">
+    <link rel="stylesheet" type="text/css" href="style/layout.css">
+    <script id="project-template" type="text/x-handlebars-template">
+      <article data-project="{{title}}">
+        <header>
+          <h2><a href="{{url}}">{{title}}</a></h2>
+          <time pubdate="">{{publishStatus}}</time>
+        </header>
+        <section class='aboutProj'>{{{about}}}</section>
+      </article>
+    </script>
   </head>
   <body>
     <div id='toggleNav' class='icon-menu'></div></br>
@@ -22,29 +32,22 @@
     </nav>
     <main>
       <section id='project-section' class='tab-content'>
-          <ul>
-            <li>
-              <select id='project-filter'>
-                <option value="">Select a Project</option>
-              </select>
-            </li>
-          </ul>
-        </section>
-        <article class='template'>
-          <header>
-            <h2><a href=""></a></h2>
-            <time pubdate=""></time>
-          </header>
-          <section class='aboutProj'></section>
-        </article>
+        <ul>
+          <li>
+            <select id='project-filter'>
+              <option value="">Select a Project</option>
+            </select>
+          </li>
+        </ul>
       </section>
       <section id='about' class='tab-content'>
-        <h2>Welcome to my portfolio!</h2>
-        <h3>About the Developer:</h3>
-        <p>Current Code Fellows 301 student. This page compiles my most recent projects.</p>
+      <h2>Welcome to my portfolio!</h2>
+      <h3>About the Developer:</h3>
+      <p>Current Code Fellows 301 student. This page compiles my most recent projects.</p>
       </section>
     </main>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
     <script src='scripts/projects.js'></script>
     <script src='scripts/app.js'></script>
     <script src='scripts/projectView.js'></script>

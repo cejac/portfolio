@@ -8,20 +8,29 @@ function Project(opts){
 }
 
 Project.prototype.toHTML = function(){
-  var $newProject = $('article.template').clone();
+  var templateScript = $('#project-template').html();
+  var template = Handlebars.compile(templateScript);
 
-  $newProject.attr('data-project', this.title);
-  $newProject.find('a').text(this.title);
-  $newProject.find('a').prop('href', this.url);
-  $newProject.attr('pubdate', this.published);
-  $newProject.find('section.aboutProj').append(this.about);
-  $newProject.find('time[pubdate]').attr('title', this.published);
-  $newProject.find('time').html('about ' + parseInt((new Date() - new Date(this.published))/60/60/24/1000) + ' days ago');
+  this.daysAgo = parseInt((new Date() - new Date(this.published))/60/60/24/1000);
+  this.publishStatus = this.published ? 'published ' + this.daysAgo + ' days ago' : '(draft)';
 
+  var compileTemplate = template(this);
 
-  $newProject.removeClass('template');
+  return compileTemplate;
 
-  return $newProject;
+  // var $newProject = $('article.template').clone();
+  // $newProject.attr('data-project', this.title);
+  // $newProject.find('a').text(this.title);
+  // $newProject.find('a').prop('href', this.url);
+  // $newProject.attr('pubdate', this.published);
+  // $newProject.find('section.aboutProj').append(this.about);
+  // $newProject.find('time[pubdate]').attr('title', this.published);
+  // $newProject.find('time').html('about ' + parseInt((new Date() - new Date(this.published))/60/60/24/1000) + ' days ago');
+  //
+  //
+  // $newProject.removeClass('template');
+  //
+  // return $newProject;
 };
 
 data.sort(function(a,b) {
