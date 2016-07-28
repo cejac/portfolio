@@ -2,7 +2,12 @@ var projectView = {};
 
 projectView.navHandler = function(){
   $('#mainNav').on('click', '.navSelect', function(){
-    var $mainNavSelect = $(this).data('content');
-  
-  })
+    var $navSelect = $(this).data('content');
+    $('.tab-content').hide();
+    $('#' + $navSelect).show();
+  });
 };
+
+$(function(){
+  projectView.navHandler();
+})
