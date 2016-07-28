@@ -3,21 +3,33 @@
   <head>
     <meta charset="UTF-8">
     <title>Carolina's Portfolio</title>
-    <link rel="stylesheet" type="text/css" href="base.css">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" type="text/css" href="style/base.css">
     <link rel="stylesheet" type="text/css" href="normalize.css">
     <link rel="stylesheet" type="text/css" href="icon.css">
+    <link rel="stylesheet" type="text/css" href="style/module.css">
   </head>
   <body>
+    <div id='toggleNav' class='icon-menu'></div></br>
+    <header id='mainHeader'>
+      <h1>Web Development Portfolio</h1>
+      <p>Developer: Carolina Ceja</p>
+    </header>
     <nav id='mainNav'>
       <ul>
         <li class="navSelect icon-home" data-content="project-section"><a href="#">Home</a></li>
         <li class="navSelect icon-newspaper" data-content="about"><a href="#">About</a></li>
     </nav>
     <main>
-      <header>
-        <h1>Carolina's Portfolio</h1>
-      </header>
       <section id='project-section' class='tab-content'>
+          <ul>
+            <li>
+              <select id='project-filter'>
+                <option value="">Select a Project</option>
+              </select>
+            </li>
+          </ul>
+        </section>
         <article class='template'>
           <header>
             <h2><a href=""></a></h2>
@@ -27,14 +39,14 @@
         </article>
       </section>
       <section id='about' class='tab-content'>
-        <h2>Welcome to my porfolio!</h2>
-        <h3>About the Developer</h3>
-        <p>Current Code Fellows 301 student</p>
+        <h2>Welcome to my portfolio!</h2>
+        <h3>About the Developer:</h3>
+        <p>Current Code Fellows 301 student. This page compiles my most recent projects.</p>
       </section>
     </main>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-    <script src='projects.js'></script>
-    <script src='app.js'></script>
-    <script src='projectView.js'></script>
+    <script src='scripts/projects.js'></script>
+    <script src='scripts/app.js'></script>
+    <script src='scripts/projectView.js'></script>
   </body>
 </html>

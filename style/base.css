@@ -1,0 +1,49 @@
+body {
+  background: -webkit-linear-gradient(#107686,#77D2D5, #BCDDCC, #F9E1C5, #EDAF8F);
+  background: -o-linear-gradient(#107686,#77D2D5, #BCDDCC, #F9E1C5, #EDAF8F);
+  background: -moz-linear-gradient(#107686,#77D2D5,#BCDDCC, #F9E1C5, #EDAF8F);
+  background: linear-gradient(#107686,#77D2D5, #BCDDCC, #F9E1C5, #EDAF8F);
+  line-height: inherit;
+}
+
+#mainHeader{
+  font-size: 200%;
+  text-align: center;
+  color: white;
+  font-family: 'Optima';
+  }
+
+  nav {
+    text-align: center;
+}
+
+li{
+  list-style-type: none;
+  margin: 5%;
+}
+
+li a {
+  text-decoration: none;
+  color: #CF5300;
+}
+
+li a:hover{
+  color: #006994;
+}
+
+h2 a{
+  color: #CF5300;
+}
+
+p{
+  color: black;
+}
+
+#about {
+  color: #CF5300;
+}
+
+#about h2 {
+  font-size: 250%;
+  font-family: 'Optima';
+}
