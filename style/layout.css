@@ -1,0 +1,24 @@
+#toggleNav{
+  max-width: 100%;
+}
+
+#project-section {
+  text-align: center;
+}
+
+#about{
+  text-align: center;
+  color: #CF5300;
+}
+
+#about h2 {
+  font-size: 200%;
+  font-family: 'Optima';
+}
+
+#mainHeader{
+  font-size: 200%;
+  text-align: center;
+  color: white;
+  font-family: 'Optima';
+  }

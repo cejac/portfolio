@@ -6,13 +6,6 @@ body {
   line-height: inherit;
 }
 
-#mainHeader{
-  font-size: 200%;
-  text-align: center;
-  color: white;
-  font-family: 'Optima';
-  }
-
   nav {
     text-align: center;
 }
@@ -37,13 +30,4 @@ h2 a{
 
 p{
   color: black;
-}
-
-#about {
-  color: #CF5300;
-}
-
-#about h2 {
-  font-size: 250%;
-  font-family: 'Optima';
 }
