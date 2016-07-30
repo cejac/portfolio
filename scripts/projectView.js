@@ -46,7 +46,7 @@ projectView.menuToggle = function(){
     if ($(window).width() >= 600) {
       $('.navSelect').show().css({'display': 'inline'});
     } else if ($(window).width() <= 599) {
-      $('.navSelect').hide().css({'display': 'flex', 'flex-direction': 'row', 'justify-content': 'center'});
+      $('.navSelect').css({'display': 'flex', 'flex-direction': 'row', 'justify-content': 'center'}).hide();
     } else {
       $('.navSelect').hide();
     }
