@@ -17,20 +17,6 @@ Project.prototype.toHTML = function(){
   var compileTemplate = template(this);
 
   return compileTemplate;
-
-  // var $newProject = $('article.template').clone();
-  // $newProject.attr('data-project', this.title);
-  // $newProject.find('a').text(this.title);
-  // $newProject.find('a').prop('href', this.url);
-  // $newProject.attr('pubdate', this.published);
-  // $newProject.find('section.aboutProj').append(this.about);
-  // $newProject.find('time[pubdate]').attr('title', this.published);
-  // $newProject.find('time').html('about ' + parseInt((new Date() - new Date(this.published))/60/60/24/1000) + ' days ago');
-  //
-  //
-  // $newProject.removeClass('template');
-  //
-  // return $newProject;
 };
 
 data.sort(function(a,b) {
