@@ -1,5 +1,3 @@
-var projects = [];
-
 function Project(opts){
   this.title = opts.title;
   this.url = opts.url;
@@ -7,7 +5,9 @@ function Project(opts){
   this.about = opts.about;
 }
 
-Project.prototype.toHTML = function(){
+Project.all = [];
+
+Project.prototype.toHtml = function(){
   var templateScript = $('#project-template').html();
   var template = Handlebars.compile(templateScript);
 
@@ -19,14 +19,25 @@ Project.prototype.toHTML = function(){
   return compileTemplate;
 };
 
-data.sort(function(a,b) {
-  return (new Date(b.published)) - (new Date(a.published));
-});
+Project.loadAll = function(data){
+  data.sort(function(a,b) {
+    return (new Date(b.published)) - (new Date(a.published));
+  });
 
-data.forEach(function(opts) {
-  projects.push(new Project(opts));
-});
+  data.forEach(function(obj) {
+    Project.all.push(new Project(obj));
+  });
+};
 
-projects.forEach(function(a){
-  $('#project-section').append(a.toHTML());
-});
+Project.getAll = function(){
+  if (localStorage.data){
+    Project.loadAll(JSON.parse(localStorage.getItem('data')));
+    projectView.initPage();
+  } else {
+    $.getJSON('scripts/projects.json', function(data){
+      Project.loadAll(data);
+      localStorage.setItem('data', JSON.stringify(data));
+    });
+    projectView.initPage();
+  }
+};

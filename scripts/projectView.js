@@ -53,6 +53,18 @@ projectView.menuToggle = function(){
   });
 };
 
+projectView.initPage = function(){
+  Project.all.forEach(function(a){
+    $('#project-section').append(a.toHtml());
+  });
+
+  projectView.filter();
+  projectView.filterHandler();
+  projectView.navHandler();
+  projectView.refresh();
+  projectView.menuToggle();
+};
+
 // projectView.initNewArticlePage = function(){
 //   $('.tab-content').show(); //section we are tageting has a class of tab-content
 //   $('#article-export').hide();
@@ -85,11 +97,3 @@ projectView.menuToggle = function(){
 //
 //   //if you call things without () you set things, if you put arguments () you get it
 // };
-
-$(function(){
-  projectView.filter();
-  projectView.filterHandler();
-  projectView.navHandler();
-  projectView.refresh();
-  projectView.menuToggle();
-});
