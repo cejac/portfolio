@@ -37,7 +37,7 @@ Project.getAll = function(){
     $.getJSON('scripts/projects.json', function(data){
       Project.loadAll(data);
       localStorage.setItem('data', JSON.stringify(data));
+      projectView.initPage();
     });
-    projectView.initPage();
   }
 };
