@@ -18,6 +18,9 @@
         <section class="aboutProj">{{{about}}}</section>
       </article>
     </script>
+    <script id="title-template" type="text/x-handlebars-template">
+      <li><strong>{{name}}</strong>: {{numWords}} words written</li>
+    </script>
   </head>
   <body>
     <div id="toggleNav" class="icon-menu"></div></br>
@@ -44,6 +47,8 @@
         <h2>Welcome to my portfolio!</h2>
         <h3>About the Developer:</h3>
         <p>Current Code Fellows 301 student. This page compiles my most recent projects.</p>
+        <h3>Project Stats</h3>
+        <p id="stats-section"></p>
       </section>
     </main>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
@@ -53,7 +58,7 @@
     <script src="scripts/app.js"></script>
     <script src="scripts/projectView.js"></script>
     <script>
-      Project.getAll();
+      Project.getAll(projectView.initPage);
     </script>
   </body>
 </html>
