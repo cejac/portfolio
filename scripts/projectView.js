@@ -30,7 +30,7 @@
   //   });
   // };
   //
-  projectView.refresh = function(){
+  projectView.tabRefresh = function(){
     $('#mainNav').on('click', '.icon-home', function(){
       $('article').show();
       $('#project-filter').val('');
@@ -68,7 +68,7 @@
     projectView.filter();
     projectView.filterHandler();
     // projectView.navHandler();
-    projectView.refresh();
+    projectView.tabRefresh();
     projectView.menuToggle();
   };
 

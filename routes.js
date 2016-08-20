@@ -1,3 +1,3 @@
-page('/', console.log('hello'));
+page('/', projectController.index);
 page('/about', aboutController.index);
 page();
