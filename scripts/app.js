@@ -67,6 +67,5 @@
     });
   };
 
-
   module.Project = Project;
 })(window);

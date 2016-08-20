@@ -22,14 +22,14 @@
     });
   };
 
-  projectView.navHandler = function(){
-    $('#mainNav').on('click', '.navSelect', function(){
-      var $navSelect = $(this).data('content');
-      $('.tab-content').hide();
-      $('#' + $navSelect).show();
-    });
-  };
-
+  // projectView.navHandler = function(){
+  //   $('#mainNav').on('click', '.navSelect', function(){
+  //     var $navSelect = $(this).data('content');
+  //     $('.tab-content').hide();
+  //     $('#' + $navSelect).show();
+  //   });
+  // };
+  //
   projectView.refresh = function(){
     $('#mainNav').on('click', '.icon-home', function(){
       $('article').show();
@@ -67,13 +67,19 @@
 
     projectView.filter();
     projectView.filterHandler();
-    projectView.navHandler();
+    // projectView.navHandler();
     projectView.refresh();
     projectView.menuToggle();
   };
 
   module.projectView = projectView;
 })(window);
+
+
+
+
+
+
 // projectView.initNewArticlePage = function(){
 //   $('.tab-content').show(); //section we are tageting has a class of tab-content
 //   $('#article-export').hide();
