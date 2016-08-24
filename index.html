@@ -21,6 +21,15 @@
     <script id="title-template" type="text/x-handlebars-template">
       <li><strong>{{name}}</strong>: {{numWords}} words written</li>
     </script>
+    <script id='repo-template' type="text/x-handlebars-template">
+    <li>
+        <a href="{{html_url}}" target="_blank"><h3>{{name}}</h3></a>
+        <p>Description: {{description}}</p>
+        <p>Language: {{language}}</p>
+        <p>Created: {{created_at}}</p>
+        <p>Last updated: {{updated_at}}</p>
+      </li>
+    </script>
   </head>
   <body>
     <div id="toggleNav" class="icon-menu"></div></br>
@@ -32,6 +41,8 @@
       <ul>
         <li class="navSelect icon-home" data-content="project-section" id="home"><a href="/">Home</a></li>
         <li class="navSelect icon-newspaper" data-content="about"><a href="/about">About</a></li>
+        <li class="navSelect icon-home" data-content="git-section"><a href="/git">Github</a></li>
+
     </nav>
     <main>
       <section id="project-section" class="tab-content">
@@ -50,17 +61,34 @@
         <h3>Project Stats:</h3>
         <p id="stats-section"></p>
       </section>
+      <section id="gitWork" class="tab-content">
+        <header>
+          A list of all projects I have worked on in some form
+        </header>
+        <section>
+          <h1>All of these projects can be found in my Github account:</h1>
+          <ul>
+            <li>Coding</li>
+          </ul>
+        </section>
+      </section>
     </main>
     <script src="scripts/page.js"></script>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
     <!-- <script src="marked.js"></script> need to get files to either/both and add to html files
     <script src="highlight.pack.js"></script> -->
+    <script src="gitToken.js"></script>
+
     <script src="scripts/app.js"></script>
     <script src="scripts/projectView.js"></script>
 
     <script src="scripts/projectsController.js"></script>
     <script src="scripts/aboutController.js"></script>
+    <script src="scripts/repoController.js"></script>
+
+    <script src="scripts/repo.js"></script>
+    <script src="scripts/repoView.js"></script>
 
     <script src="routes.js"></script>
   </body>
