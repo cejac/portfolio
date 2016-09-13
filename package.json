@@ -1,0 +1,25 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "A portfolio that compiles my most recent projects",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cejac/portfolio.git"
+  },
+  "keywords": [],
+  "author": "Carolina Ceja",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cejac/portfolio/issues"
+  },
+  "homepage": "https://github.com/cejac/portfolio#readme"
+}

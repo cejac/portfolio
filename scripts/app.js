@@ -1,46 +1,71 @@
-var projects = [];
+(function(module){
+  function Project(opts){
+    this.title = opts.title;
+    this.url = opts.url;
+    this.published = opts.published;
+    this.about = opts.about;
+  }
 
-function Project(opts){
-  this.title = opts.title;
-  this.url = opts.url;
-  this.published = opts.published;
-  this.about = opts.about;
-}
+  Project.all = [];
 
-Project.prototype.toHTML = function(){
-  var templateScript = $('#project-template').html();
-  var template = Handlebars.compile(templateScript);
+  Project.prototype.toHtml = function(){
+    var templateScript = Handlebars.compile($('#project-template').html());
 
-  this.daysAgo = parseInt((new Date() - new Date(this.published))/60/60/24/1000);
-  this.publishStatus = this.published ? 'published ' + this.daysAgo + ' days ago' : '(draft)';
+    this.daysAgo = parseInt((new Date() - new Date(this.published))/60/60/24/1000);
+    this.publishStatus = this.published ? 'published ' + this.daysAgo + ' days ago' : '(draft)';
 
-  var compileTemplate = template(this);
+    return templateScript(this);
+  };
 
-  return compileTemplate;
+  Project.loadAll = function(data){
+    data.sort(function(a,b) {
+      return (new Date(b.published)) - (new Date(a.published));
+    });
 
-  // var $newProject = $('article.template').clone();
-  // $newProject.attr('data-project', this.title);
-  // $newProject.find('a').text(this.title);
-  // $newProject.find('a').prop('href', this.url);
-  // $newProject.attr('pubdate', this.published);
-  // $newProject.find('section.aboutProj').append(this.about);
-  // $newProject.find('time[pubdate]').attr('title', this.published);
-  // $newProject.find('time').html('about ' + parseInt((new Date() - new Date(this.published))/60/60/24/1000) + ' days ago');
-  //
-  //
-  // $newProject.removeClass('template');
-  //
-  // return $newProject;
-};
+    data.forEach(function(obj) {
+      Project.all.push(new Project(obj));
+    });
+  };
 
-data.sort(function(a,b) {
-  return (new Date(b.published)) - (new Date(a.published));
-});
+  Project.getAll = function(callback){
+    if (localStorage.data){
+      Project.loadAll(JSON.parse(localStorage.getItem('data')));
+      callback();
+    } else {
+      $.getJSON('scripts/projects.json', function(data){
+        Project.loadAll(data);
+        localStorage.setItem('data', JSON.stringify(data));
+        callback();
+      });
+    }
+  };
 
-data.forEach(function(opts) {
-  projects.push(new Project(opts));
-});
+  Project.allProjects = function() {
+    return Project.all.map(function(project){
+      return project.title;
+    })
+  .filter(function(title, index, arr){
+    return arr.indexOf(title) === index;
+  });
+  };
 
-projects.forEach(function(a){
-  $('#project-section').append(a.toHTML());
-});
+  Project.wordsPerProject = function() {
+    return Project.allProjects().map(function(title) {
+      return {
+        name: title,
+        numWords: Project.all.reduce(function(a, b){
+          if(b.title === title){
+            a.push(b.about.split(' ').length);
+          }
+          return a;
+        }, [])
+            .reduce(function(a, b) {
+
+              return a + b;
+            })
+      };
+    });
+  };
+
+  module.Project = Project;
+})(window);
